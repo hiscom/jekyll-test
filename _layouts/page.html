@@ -2,16 +2,27 @@
 layout: default
 ---
 
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<h1 class="display-4 mb-5">{{ page.title }}</h1>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			{{ content }}
-		</div>
-	</div>
-</div>
+{% unless page.hide-breadcrumbs %}
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+	<li class="breadcrumb-item"><a href="{{ site.baseurl }}/">{{site.title}}</a> </li>
+	{% assign crumbs = page.url | split: '/' %}
+	{% for crumb in crumbs offset:1 %}
+	<li class="breadcrumb-item {% if forloop.last %}active{% endif %}">
+		{% unless forloop.last %}
+		<a href="/{% for crumb in crumbs offset:1 limit:forloop.index %}{{crumb}}/{% endfor %}">
+		{{ crumb | capitalize }}
+		</a>
+		{% else %}
+		{{ crumb | capitalize }}
+		{% endunless %}
+	</li>
+	{% endfor %}
+</ol>
+</nav>
+{% endunless %}
+
+<h1 class="display-4 mb-5">{{ page.title }}</h1>
+
+{{ content }}
 

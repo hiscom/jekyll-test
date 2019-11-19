@@ -1,0 +1,13 @@
+---
+title: HISCOM 2019 AGM Minutes
+shortTitle: 2019
+layout: page
+order: 1
+---
+
+[.lead]
+The minutes would go here. They are very informative.
+
+Blah.
+
+Blah.

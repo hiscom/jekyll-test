@@ -2,15 +2,151 @@
 ---
 @import "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css";
 
-body {
+:root {
+  --block-bg-colour: white;
+  --block-title-colour: rgba(0,0,0,0.03);
+  --block-border-colour: rgba(0,0,0,.125);
+  --block-border-radius: 0.1rem;
+  --block-muted-colour: #6c757d;
+}
+
+html, body {
   font-family: "Roboto", sans-serif;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Slab", sans-serif;
 }
 
-figure.highlight > pre {
+h2 {
+  border-bottom: 1px solid #dee2e6;
+}
+
+article, section, div, p, blockquote, ul, ol, dl {
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--dark);
+}
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+
+figure.highlight > pre, .listingblock pre {
   background-color: #eee;
   padding: 1rem;
+}
+
+.sidebarblock, {
+  background-color: var(--block-bg-colour);
+  border: 1px solid var(--block-border-colour);
+  border-radius: var(--block-border-radius);
+  margin-bottom: 1em;
+  padding: 0;
+}
+.sidebarblock .title:first-child {
+  border-radius: calc(var(--block-border-radius) - 1px) calc(var(--block-border-radius) - 1px) 0 0;
+}
+.sidebarblock .title {
+  background-color: var(--block-title-colour);
+  border-bottom: 1px solid var(--block-border-colour);
+  padding: 0.5em 0 0.5em 1em;
+  margin: 0;
+}
+.sidebarblock .dlist {
+  padding: 1em 1em 0 1em;
+}
+.sidebarblock p {
+  margin-bottom: 0;
+}
+
+.quoteblock {
+  background-color: var(--block-bg-colour);
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+}
+blockquote {
+  margin: 0;
+}
+.attribution {
+  font-size: 80%;
+  color: var(--block-muted-colour);
+}
+
+.highlight {
+  margin: 1.5rem 0 1.5rem 1.5rem;
+}
+
+.admonitionblock {
+  margin-bottom: 1rem;
+}
+.admonitionblock .icon {
+  padding: .75rem;
+}
+.admonitionblock .content {
+  padding: 1rem;
+}
+.admonitionblock .icon {
+  background-color: var(--block-title-colour);
+}
+.admonitionblock .content {
+  background-color: var(--block-bg-colour);
+}
+.admonitionblock.tip .icon {
+  background-color: var(--success);
+}
+.admonitionblock.tip {
+  border: 1px solid var(--success);
+}
+.admonitionblock.note .icon {
+  background-color: var(--info);
+}
+.admonitionblock.note {
+  border: 1px solid var(--info);
+}
+.admonitionblock.important .icon {
+  background-color: var(--danger);
+}
+.admonitionblock.important {
+  border: 1px solid var(--danger);
+}
+.admonitionblock.warning .icon {
+  background-color: var(--warning);
+}
+.admonitionblock.warning {
+  border: 1px solid var(--warning);
+}
+.admonitionblock.caution .icon {
+  background-color: var(--danger);
+}
+.admonitionblock.caution {
+  border: 1px solid var(--danger);
+}
+
+.ulist .title {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+.ulist p, .tableblock p {
+  margin-bottom: 0;
+}
+.ulist ul {
+  padding-left: 36px;
+}
+.ulist li {
+  margin-bottom: 0.5rem;
+}
+
+.dlist .ulist li {
+  margin-bottom: 0;
+}
+
+table.tableblock {
+  margin: 1.5rem;
+}
+table.tableblock caption {
+  caption-side: top;
 }

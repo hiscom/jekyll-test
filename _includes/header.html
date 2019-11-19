@@ -2,11 +2,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
+				{% if page.isHome %}
 				<h1 class="display-3 text-white bg-dark">
 					<i class="fas fa-seedling"></i>
-					{{ site.title }}</h1>
+					<a href="{{site.baseurl}}/" class="text-reset text-decoration-none">{{ site.title }}</a></h1>
 				<hr>
-				<p class="lead">{{ site.description }}</p>
+				{% endif %}
+				<p class="lead">{{ site.descriptionHtml }}</p>
 			</div>
 		</div>
 	</div>

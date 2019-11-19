@@ -24,9 +24,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   Herbarium Information Systems Committee (HISCOM) is the technical sub-committee of the
   Council of Heads of Australasian Herbaria (CHAH). It provides IT expertise in data
   science and management to Australasian herbaria.
+descriptionHtml: >-
+  Herbarium Information Systems Committee (HISCOM) is the technical sub-committee of the
+  <a href="http://www.chah.gov.au/" class="text-reset">Council of Heads of
+  Australasian Herbaria (CHAH)</a>. It provides IT expertise in data science and
+  management to Australasian herbaria.
 baseurl: "/jekyll-test" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
 github_username:  hiscom
 
 # Build settings
@@ -55,3 +59,19 @@ plugins:
 #   - vendor/ruby/
 exclude:
 - .idea/
+
+asciidoc: {}
+
+asciidoctor:
+  attributes:
+  - stylesdir=assets
+  - source-highlighter=rouge
+  - pygments-style=github
+
+collections:
+  agms:
+    output: true
+    sort_by: order
+  teleconferences:
+    output: true
+    sort_by: order

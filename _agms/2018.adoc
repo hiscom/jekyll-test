@@ -1,0 +1,10 @@
+---
+title: HISCOM 2018 AGM Minutes
+shortTitle: 2018
+layout: page
+order: 2
+---
+
+[.lead]
+The minutes would go here.
+
