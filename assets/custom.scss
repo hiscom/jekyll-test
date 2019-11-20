@@ -15,6 +15,15 @@ html, body {
   height: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Slab", sans-serif;
 }
@@ -149,4 +158,9 @@ table.tableblock {
 }
 table.tableblock caption {
   caption-side: top;
+}
+
+footer {
+  flex-shrink: 0;
+  position: relative;
 }

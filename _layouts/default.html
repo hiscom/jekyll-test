@@ -4,37 +4,38 @@
 {% include head.html %}
 
 <body>
+<div class="content">
+	{% include header.html %}
 
-{% include header.html %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				{% unless page.hide-breadcrumbs %}
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="{{ site.baseurl }}/">{{site.title}}</a>
+						</li>
+						{% assign crumbs = page.url | split: '/' %}
+						{% for crumb in crumbs offset:1 %}
+						<li class="breadcrumb-item {% if forloop.last %}active{% endif %}">
+							{% unless forloop.last %}
+							<a href="/{% for crumb in crumbs offset:1 limit:forloop.index %}{{crumb}}/{% endfor %}">
+							{{ crumb | capitalize }}
+							</a>
+							{% else %}
+							{{ crumb | capitalize }}
+							{% endunless %}
+						</li>
+						{% endfor %}
+					</ol>
+				</nav>
+				{% endunless %}
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-9">
-			{% unless page.hide-breadcrumbs %}
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="{{ site.baseurl }}/">{{site.title}}</a>
-					</li>
-					{% assign crumbs = page.url | split: '/' %}
-					{% for crumb in crumbs offset:1 %}
-					<li class="breadcrumb-item {% if forloop.last %}active{% endif %}">
-						{% unless forloop.last %}
-						<a href="/{% for crumb in crumbs offset:1 limit:forloop.index %}{{crumb}}/{% endfor %}">
-						{{ crumb | capitalize }}
-						</a>
-						{% else %}
-						{{ crumb | capitalize }}
-						{% endunless %}
-					</li>
-					{% endfor %}
-				</ol>
-			</nav>
-			{% endunless %}
-
-			{{ content }}
-		</div>
-		<div class="col-md-3 order-md-first">
-			{% include navigation.html %}
+				{{ content }}
+			</div>
+			<div class="col-md-3 order-md-first">
+				{% include navigation.html %}
+			</div>
 		</div>
 	</div>
 </div>
